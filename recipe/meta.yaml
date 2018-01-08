@@ -1,6 +1,6 @@
 {% set name = "nd2reader" %}
-{% set version = "3.0.6" %}
-{% set sha256 = "3aad2a5a7aa9454f8e4e02e5acbb1f5d7d8ab4023265eb848ff5c3c7d9b6788b" %}
+{% set version = "3.0.8" %}
+{% set sha256 = "45c7e91c0dad52003dfca630fa8c7504e2f75a0ab44dc86f792caf6c4a823fc5" %}
 
 package:
   name: {{ name|lower }}
@@ -14,6 +14,7 @@ source:
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
+  noarch: python
 
 requirements:
   build:

@@ -21,6 +21,7 @@ requirements:
     - python
     - setuptools
   host:
+    - python
     - pip
   run:
     - python
@@ -46,6 +47,7 @@ about:
     access to multidimensional files, lazy slicing, and nice display in IPython.
 
   doc_url: http://www.lighthacking.nl/nd2reader/
+  dev_url: https://github.com/rbnvrw/nd2reader/
 
 extra:
   recipe-maintainers:

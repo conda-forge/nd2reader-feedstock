@@ -1,6 +1,6 @@
 {% set name = "nd2reader" %}
-{% set version = "3.1.0" %}
-{% set sha256 = "33b4a0fcdc4a436310411be675ef391fd1c79b1a1013192c0f6738a238b4bc79" %}
+{% set version = "3.2.0" %}
+{% set sha256 = "aae9677b5967e3806b6b8d83338e7704413186836cc652b6f7071be4263a6dd0" %}
 
 package:
   name: {{ name|lower }}
@@ -13,13 +13,16 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . -vv"
   noarch: python
 
 requirements:
   build:
     - python
     - setuptools
+  host:
+    - python
+    - pip
   run:
     - python
     - numpy >=1.6.2
@@ -44,6 +47,7 @@ about:
     access to multidimensional files, lazy slicing, and nice display in IPython.
 
   doc_url: http://www.lighthacking.nl/nd2reader/
+  dev_url: https://github.com/rbnvrw/nd2reader/
 
 extra:
   recipe-maintainers:

@@ -17,11 +17,11 @@ build:
   noarch: python
 
 requirements:
-  host:
-    - pip
   build:
     - python
     - setuptools
+  host:
+    - pip
   run:
     - python
     - numpy >=1.6.2

@@ -1,6 +1,6 @@
 {% set name = "nd2reader" %}
-{% set version = "3.2.2" %}
-{% set sha256 = "94d5d4b152729fdcba5e4a1443e86d6cdccd5f56e6934b9983fdc404d288c480" %}
+{% set version = "3.2.3" %}
+{% set sha256 = "92b0b042d35cffd966dfe349352488a8f35f7fb993448d0f7b11cc7076b80c09" %}
 
 package:
   name: {{ name|lower }}

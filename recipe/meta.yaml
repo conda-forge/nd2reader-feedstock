@@ -1,6 +1,6 @@
 {% set name = "nd2reader" %}
-{% set version = "3.2.1" %}
-{% set sha256 = "0dcbc347e7cbb837b99e510ae60256207ce97516f744ed84b03b547c154e28d4" %}
+{% set version = "3.2.3" %}
+{% set sha256 = "92b0b042d35cffd966dfe349352488a8f35f7fb993448d0f7b11cc7076b80c09" %}
 
 package:
   name: {{ name|lower }}
@@ -12,17 +12,26 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 2
   noarch: python
+  script: "{{ PYTHON }} -m pip install --no-deps --no-cache-dir -vvv ."
 
 requirements:
   build:
     - python
     - setuptools
+    - numpy >=1.6.2
+    - six >=1.4
+    - xmltodict >=0.9.2
+    - pims >=0.3.0
   host:
     - python
     - pip
+    - setuptools
+    - numpy >=1.6.2
+    - six >=1.4
+    - xmltodict >=0.9.2
+    - pims >=0.3.0
   run:
     - python
     - numpy >=1.6.2
@@ -37,15 +46,14 @@ test:
 about:
   home: https://github.com/rbnvrw/nd2reader
   license: GPL-3.0
+  license_family: GPL
   license_file: LICENSE
   summary: 'Pure Python library for reading NIS Elements ND2 images and metadata'
-
   description: |
     nd2reader is a pure-Python package that reads images produced by NIS Elements 4.0+. It has 
     only been definitively tested on NIS Elements 4.30.02 Build 1053. Support for older versions 
     is being actively worked on. The reader is written in the pims framework, enabling easy 
     access to multidimensional files, lazy slicing, and nice display in IPython.
-
   doc_url: http://www.lighthacking.nl/nd2reader/
   dev_url: https://github.com/rbnvrw/nd2reader/
 

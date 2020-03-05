@@ -15,14 +15,18 @@ build:
   number: 2
   noarch: python
   script: "{{ PYTHON }} -m pip install --no-deps --no-cache-dir -vvv ."
-  skip: True  # [py<35]
 
 requirements:
+  build:
+    - python
+    - setuptools
+    - numpy >=1.6.2
+    - six >=1.4
+    - xmltodict >=0.9.2
+    - pims >=0.3.0
   host:
     - python
     - pip
-  build:
-    - python
     - setuptools
     - numpy >=1.6.2
     - six >=1.4

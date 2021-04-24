@@ -1,6 +1,6 @@
 {% set name = "nd2reader" %}
-{% set version = "3.2.3" %}
-{% set sha256 = "92b0b042d35cffd966dfe349352488a8f35f7fb993448d0f7b11cc7076b80c09" %}
+{% set version = "3.3.0" %}
+{% set sha256 = "41db1048e19e6b6161aea990df29e264121cde1e1a98df6ca785ebefff184ff9" %}
 
 package:
   name: {{ name|lower }}
@@ -12,20 +12,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install --no-deps --no-cache-dir -vvv ."
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - setuptools
     - numpy >=1.6.2
     - six >=1.4
     - xmltodict >=0.9.2
     - pims >=0.3.0
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools
     - numpy >=1.6.2
@@ -33,7 +33,7 @@ requirements:
     - xmltodict >=0.9.2
     - pims >=0.3.0
   run:
-    - python
+    - python >=3.6
     - numpy >=1.6.2
     - six >=1.4
     - xmltodict >=0.9.2
@@ -45,7 +45,7 @@ test:
 
 about:
   home: https://github.com/rbnvrw/nd2reader
-  license: GPL-3.0
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: 'Pure Python library for reading NIS Elements ND2 images and metadata'

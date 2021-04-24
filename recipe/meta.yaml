@@ -18,14 +18,14 @@ build:
 
 requirements:
   build:
-    - python
+    - python>=3.6
     - setuptools
     - numpy >=1.6.2
     - six >=1.4
     - xmltodict >=0.9.2
     - pims >=0.3.0
   host:
-    - python
+    - python>=3.6
     - pip
     - setuptools
     - numpy >=1.6.2
@@ -33,7 +33,7 @@ requirements:
     - xmltodict >=0.9.2
     - pims >=0.3.0
   run:
-    - python
+    - python>=3.6
     - numpy >=1.6.2
     - six >=1.4
     - xmltodict >=0.9.2
@@ -45,7 +45,7 @@ test:
 
 about:
   home: https://github.com/rbnvrw/nd2reader
-  license: GPL-3.0
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: 'Pure Python library for reading NIS Elements ND2 images and metadata'

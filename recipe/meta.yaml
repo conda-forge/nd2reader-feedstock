@@ -40,6 +40,8 @@ requirements:
     - pims >=0.3.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - nd2reader
 

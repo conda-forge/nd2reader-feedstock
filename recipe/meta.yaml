@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -18,14 +18,14 @@ build:
 
 requirements:
   build:
-    - python >=3.6
+    - python >={{ python_min }}
     - setuptools
     - numpy >=1.6.2
     - six >=1.4
     - xmltodict >=0.9.2
     - pims >=0.3.0
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
     - numpy >=1.6.2
@@ -33,7 +33,7 @@ requirements:
     - xmltodict >=0.9.2
     - pims >=0.3.0
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy >=1.6.2
     - six >=1.4
     - xmltodict >=0.9.2
@@ -60,4 +60,3 @@ about:
 extra:
   recipe-maintainers:
     - rbnvrw
-    - caspervdw
